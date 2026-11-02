@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Your name here">
+
+<title>Species Diversity and Distributions</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-efbb37e9afcc02144ebbc7afd12a776f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions"><span class="header-section-number">1</span> Instructions</a>
+  <ul class="collapse">
+  <li><a href="#english" id="toc-english" class="nav-link" data-scroll-target="#english"><span class="header-section-number">1.1</span> English</a></li>
+  <li><a href="#français" id="toc-français" class="nav-link" data-scroll-target="#français"><span class="header-section-number">1.2</span> Français</a></li>
+  </ul></li>
+  <li><a href="#english-1" id="toc-english-1" class="nav-link" data-scroll-target="#english-1"><span class="header-section-number">2</span> English</a>
+  <ul class="collapse">
+  <li><a href="#estimating-the-number-of-species" id="toc-estimating-the-number-of-species" class="nav-link" data-scroll-target="#estimating-the-number-of-species"><span class="header-section-number">2.1</span> Estimating the number of species</a></li>
+  <li><a href="#phylogenetic-diversity" id="toc-phylogenetic-diversity" class="nav-link" data-scroll-target="#phylogenetic-diversity"><span class="header-section-number">2.2</span> Phylogenetic diversity</a></li>
+  <li><a href="#lognormal-distribution" id="toc-lognormal-distribution" class="nav-link" data-scroll-target="#lognormal-distribution"><span class="header-section-number">2.3</span> Lognormal distribution</a></li>
+  <li><a href="#pielou-1972" id="toc-pielou-1972" class="nav-link" data-scroll-target="#pielou-1972"><span class="header-section-number">2.4</span> Pielou (1972)</a>
+  <ul class="collapse">
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2.4.1</span> Data</a></li>
+  <li><a href="#aphid-diversity" id="toc-aphid-diversity" class="nav-link" data-scroll-target="#aphid-diversity"><span class="header-section-number">2.4.2</span> Aphid diversity</a></li>
+  <li><a href="#niche-width" id="toc-niche-width" class="nav-link" data-scroll-target="#niche-width"><span class="header-section-number">2.4.3</span> Niche width</a></li>
+  <li><a href="#niche-overlap" id="toc-niche-overlap" class="nav-link" data-scroll-target="#niche-overlap"><span class="header-section-number">2.4.4</span> Niche overlap</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#français-1" id="toc-français-1" class="nav-link" data-scroll-target="#français-1"><span class="header-section-number">3</span> Français</a>
+  <ul class="collapse">
+  <li><a href="#estimation-du-nombre-despèces" id="toc-estimation-du-nombre-despèces" class="nav-link" data-scroll-target="#estimation-du-nombre-despèces"><span class="header-section-number">3.1</span> Estimation du nombre d’espèces</a></li>
+  <li><a href="#diversité-phylogénétique" id="toc-diversité-phylogénétique" class="nav-link" data-scroll-target="#diversité-phylogénétique"><span class="header-section-number">3.2</span> Diversité phylogénétique</a></li>
+  <li><a href="#distribution-lognormale" id="toc-distribution-lognormale" class="nav-link" data-scroll-target="#distribution-lognormale"><span class="header-section-number">3.3</span> Distribution lognormale</a></li>
+  <li><a href="#pielou-1972-1" id="toc-pielou-1972-1" class="nav-link" data-scroll-target="#pielou-1972-1"><span class="header-section-number">3.4</span> Pielou (1972)</a>
+  <ul class="collapse">
+  <li><a href="#données" id="toc-données" class="nav-link" data-scroll-target="#données"><span class="header-section-number">3.4.1</span> Données</a></li>
+  <li><a href="#diversité-des-pucerons" id="toc-diversité-des-pucerons" class="nav-link" data-scroll-target="#diversité-des-pucerons"><span class="header-section-number">3.4.2</span> Diversité des pucerons</a></li>
+  <li><a href="#largeur-de-niches" id="toc-largeur-de-niches" class="nav-link" data-scroll-target="#largeur-de-niches"><span class="header-section-number">3.4.3</span> Largeur de niches</a></li>
+  <li><a href="#chevauchement-des-niches" id="toc-chevauchement-des-niches" class="nav-link" data-scroll-target="#chevauchement-des-niches"><span class="header-section-number">3.4.4</span> Chevauchement des niches</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Species Diversity and Distributions</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Your name here </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="instructions" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Instructions</h1>
+<section id="english" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="english"><span class="header-section-number">1.1</span> English</h2>
+<p>First choose your language and delete the section of the document in the other language.</p>
+<p>Answer the questions precisely but briefly: the questions are detailed to guide you so there are many of them. Don’t waste your time repeating the course: you have all documents with you, copying their content is not valuable. To answer factual questions, you don’t need to make sentences: e.g., just write “4.” to answer the question “how much are 2 + 2?”.</p>
+<p>Before you begin:</p>
+<ol type="1">
+<li>Type your name in the header of the document, in the author field.</li>
+<li>Run the following in the terminal (answer <em>No</em> if a message box asks you if you want to close some files):</li>
+</ol>
+<p><code>quarto publish gh-pages index.qmd</code></p>
+<p>During your work: render the document regularly (at the end of each question, for example) so that problems do not pile up.</p>
+<p>At the end of the exam: save the file, make a commit and push the project to GitHub. Do not modify the project after the exam has finished.</p>
+</section>
+<section id="français" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="français"><span class="header-section-number">1.2</span> Français</h2>
+<p>Commencez par choisir votre langue et supprimez la partie du document rédigée dans l’autre langue.</p>
+<p>Répondez aux questions de manière précise mais concise : les questions sont détaillées pour vous guider, c’est pourquoi elles sont nombreuses. Ne perdez pas votre temps à répéter le cours : vous disposez de tous les documents, il est inutile d’en recopier le contenu. Pour répondre aux questions factuelles, vous n’avez pas besoin de rédiger des phrases : par exemple, écrivez simplement “4.” pour répondre à la question “Combien font 2 + 2 ?”.</p>
+<p>Avant de commencer:</p>
+<ol type="1">
+<li>Tapez votre nom dans l’entête du document, dans le champ “author”</li>
+<li>Exécutez dans le terminal:</li>
+</ol>
+<p><code>quarto publish gh-pages index.qmd</code></p>
+<p>Pendant votre travail: rendez le document régulièrement (à la fin de chaque question par exemple) pour ne pas laisser les problèmes s’accumuler.</p>
+<p>A la fin de l’examen: enregistrez le fichier, faites un commit et poussez le projet sur GitHub. Ne modifiez pas le projet après la fin de l’examen.</p>
+</section>
+</section>
+<section id="english-1" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> English</h1>
+<section id="estimating-the-number-of-species" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="estimating-the-number-of-species"><span class="header-section-number">2.1</span> Estimating the number of species</h2>
+<p><em>You have three inventories of 10-hectare areas of forest (approximately 5,000 trees):</em></p>
+<ul>
+<li><em>A: 100 species, including 20 singletons (</em><span class="math inline">\(S_1\)</span><em>), 10 doubletons (</em><span class="math inline">\(S_2\)</span><em>) and 3 tripletons (</em><span class="math inline">\(S_3\)</span><em>),</em></li>
+<li><em>B: 80 species, including 30 singletons, 20 doubletons and 5 tripletons,</em></li>
+<li><em>C: 150 species, including 110 singletons, 30 doubletons and 10 tripletons.</em></li>
+</ul>
+<p><em>Reminder of the estimator formulas, using the notation from the course:</em></p>
+<ul>
+<li><span class="math inline">\(S_{J1} = S_{&gt;0} + S_1\)</span></li>
+<li><span class="math inline">\(S_{J2} = S_{&gt;0} + 2 S_1 - S_2\)</span></li>
+<li><span class="math inline">\(S_{J3} = S_{&gt;0} + 3 S_1 - 3 S_2 + S_3\)</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>Quickly estimate the asymptotic richness of the forest using the jackknife estimators and the rules of <span class="citation" data-cites="Brose2003">Brose et al. (<a href="#ref-Brose2003" role="doc-biblioref">2003</a>)</span>.</p>
+</blockquote>
+</section>
+<section id="phylogenetic-diversity" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="phylogenetic-diversity"><span class="header-section-number">2.2</span> Phylogenetic diversity</h2>
+<p><em>The following function creates a phylogenetic tree with 3 species. The parameter <code>h</code> sets the height at which species A and B diverge.</em></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tree_3sp <span class="ot">&lt;-</span> <span class="cf">function</span>(h) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  NewickABC <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"(C:1,(A:"</span>, <span class="dv">1</span> <span class="sc">-</span> h, <span class="st">",B:"</span>, <span class="dv">1</span> <span class="sc">-</span> h, <span class="st">"):"</span>, h, <span class="st">");"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  phyloABC <span class="ot">&lt;-</span> ape<span class="sc">::</span><span class="fu">read.tree</span>(<span class="at">text =</span> NewickABC)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(phyloABC, <span class="at">direction =</span> <span class="st">"downwards"</span>, <span class="at">srt =</span> <span class="dv">90</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">axis</span>(<span class="dv">2</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a tree</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tree_3sp</span>(<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>What is the order-0 phylogenetic diversity (Faith’s PD) of a community containing the three species, whose phylogenetic tree is shown in the figure?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>What is the possible range of values for <code>h</code>?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>What effect does <code>h</code> have on the value of PD?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Express the value of PD in terms of <code>h</code>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>What is the richness (taxonomic, not phylogenetic) of the community? Explain how <span class="math inline">\(h\)</span> allows us to take into account the closeness between species B and A.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>If botanists disagree on whether species B and A are synonymous and a phylogeny shows that their distance <span class="math inline">\(h\)</span> is small, suggest a method to help them reach agreement.</p>
+</blockquote>
+</section>
+<section id="lognormal-distribution" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="lognormal-distribution"><span class="header-section-number">2.3</span> Lognormal distribution</h2>
+<p><em>We draw two random distributions from a lognormal distribution. Their size and species richness are identical; only the standard deviation of the distribution varies.</em></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.1     ✔ readr     2.2.0
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.3     ✔ tibble    3.3.1
+✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+✔ purrr     1.2.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"divent"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Le chargement a nécessité le package : Rcpp</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the random seed for reproducibility</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">973</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Size and richness</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>the_size <span class="ot">&lt;-</span> <span class="fl">1E6</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>the_richness <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw the first community</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rcommunity</span>(  <span class="dv">1</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> the_size,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">species_number =</span> the_richness,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">distribution =</span> <span class="st">"lnorm"</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">sd_lnorm =</span> <span class="dv">1</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Give it a name</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">site =</span> <span class="st">"sigma = 1"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Bind the second community data into the same tibble</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Draw the second community    </span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rcommunity</span>(</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>      <span class="dv">1</span>,</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> the_size,</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">species_number =</span> the_richness,</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">distribution =</span> <span class="st">"lnorm"</span>,</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">sd_lnorm =</span> <span class="dv">2</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Give it a name</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">site =</span> <span class="st">"sigma = 2"</span>)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="ot">-&gt;</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Store the result</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  comm_lnorm</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Whittaker plot</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(comm_lnorm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>What is the species richness of the observed communities?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>What is the abundance of the rarest species (approximately, as read from the plot) compared to the total number of trees?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>What do we observe for a sample of reasonable size, say 6.25 ha with 600 trees per hectare? Draw the figure. Be careful not to overwrite the <code>comm_lnorm</code> variable when reusing the code.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Plot the diversity profile of the two communities</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Which community is the most diverse? Explain this in relation to the value of <span class="math inline">\(\sigma\)</span>.</p>
+</blockquote>
+</section>
+<section id="pielou-1972" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="pielou-1972"><span class="header-section-number">2.4</span> Pielou (1972)</h2>
+<p><em>The aim of this final section is to revisit and modernise the results of <span class="citation" data-cites="pielou1972">Pielou (<a href="#ref-pielou1972" role="doc-biblioref">1972</a>)</span>. The data consist of abundance records for aphids of the genus</em> Dactynotus <em>on plants of the genus</em> Solidago <em>(Asteraceae), considered as their potential habitats. The diversity of each</em> Solidago <em>species is defined as the diversity of the aphid species it hosts.</em></p>
+<table class="caption-top table">
+<caption><em>Dactynotus pieloui</em> and <em>Solidago nemoralis</em></caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/Dactynotus_pieloui.jpg" class="img-fluid"></td>
+<td><img src="images/Solidago_nemoralis.jpg" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+<section id="data" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="data"><span class="header-section-number">2.4.1</span> Data</h3>
+<p><em>We will first assess the diversity of aphids in their various habitats.</em></p>
+<p><em>The data are contained in the file <code>Pielou1972.csv</code>.</em></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the file</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">'data/Pielou1972.csv'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replace missing values with zeros</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">replace_na</span>(.x, <span class="dv">0</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create an abundances object</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_abundances</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Set equal weights</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">weight =</span> <span class="dv">1</span>) <span class="ot">-&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  pielou_1972</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 12 Columns: 11
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (1): site
+dbl (10): D_nigrotuberculatus, D_nigrotibius, D_caligatus, D_pieloui, D_cana...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display it</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>pielou_1972</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 12
+   site           weight D_nigrotuberculatus D_nigrotibius D_caligatus D_pieloui
+   &lt;chr&gt;           &lt;dbl&gt;               &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt;
+ 1 S_canadensis        1                  55             9          24         8
+ 2 S_nemoralis         1                  11            39           6         1
+ 3 S_rugosa            1                  19             4          22        11
+ 4 S_juncea            1                  13             5           1         9
+ 5 S_gigantea          1                   5             3           4         8
+ 6 S_hispida           1                   1             3           0         9
+ 7 S_squarosa          1                   2             0           0         4
+ 8 S_graminifolia      1                   1             0           1         4
+ 9 S_caesia            1                   1             2           0         1
+10 S_ulignosa          1                   0             4           0         1
+11 S_flexicaulis       1                   0             1           0         0
+12 S_ohioensis         1                   0             0           0         0
+# ℹ 6 more variables: D_canadensis &lt;dbl&gt;, D_gravicornis &lt;dbl&gt;,
+#   D_lanceolatus &lt;dbl&gt;, D_macgillivrayae &lt;dbl&gt;, D_erigeronensis &lt;dbl&gt;,
+#   D_solirostratus &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>How many species of aphids are there?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>How many different plants are there?</p>
+</blockquote>
+<p><em>Given the experimental protocol (all species studied are in the data; there are no unobserved species), diversity will always be calculated at the sample level: the argument</em> <code>estimator = "naive"</code> <em>will be used systematically.</em></p>
+</section>
+<section id="aphid-diversity" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="aphid-diversity"><span class="header-section-number">2.4.2</span> Aphid diversity</h3>
+<blockquote class="blockquote">
+<p>Count the number of aphid species on each plant.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>What is the maximum species richness?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Calculate Simpson’s diversity (not entropy).</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Which plant is the most diverse according to Simpson’s measure?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Plot the diversity profiles of all <em>Solidago</em> species.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Which plant appears to be the most diverse, regardless of the order of diversity?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Check whether the curves intersect for <span class="math inline">\(q&gt;2\)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Two profiles are flat. Explain why.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Partition the diversity. Summarise this partitioning in one or a few sentences. Caution: because of a bug in the published version of package divent, you can’t use argument <code>estimator = "naive"</code> in the <code>div_part()</code> function. Partition the asymptotic diversity with its default estimator.</p>
+</blockquote>
+</section>
+<section id="niche-width" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="niche-width"><span class="header-section-number">2.4.3</span> Niche width</h3>
+<p><em>Moving forward, we will follow Pielou’s approach by studying the diversity of habitats occupied by each aphid species. From this point onwards, you can no longer simply apply the course content; instead, you must extend the concepts you are familiar with to a new approach.</em></p>
+<p><em>Given that each</em> Solidago <em>constitutes a distinct habitat for an aphid species, the number of habitats occupied serves as a proxy for the size of its niche. A generalist aphid will occupy more habitats (in other words, have a broader niche) than a specialist aphid. The niche breadth of each aphid species is therefore initially defined by the number of different habitats it occupies.</em></p>
+<p><em>The data must be organised differently, with aphid species in rows and habitats in columns, which requires converting it to a data matrix and transposing it. As the code is rather laborious, it is provided below.</em></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the file</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">'data/Pielou1972.csv'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replace missing values with zeros</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">replace_na</span>(.x, <span class="dv">0</span>))) <span class="ot">-&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  pielou_raw</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 12 Columns: 11
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (1): site
+dbl (10): D_nigrotuberculatus, D_nigrotibius, D_caligatus, D_pieloui, D_cana...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the names of the Soledagos</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>pielou_raw <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(site) <span class="ot">-&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  pielou_habitats</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a matrix</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>pielou_raw <span class="sc">%&gt;%</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove the 'site' column</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>site) <span class="sc">%&gt;%</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert to a matrix</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.matrix</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Transpose the matrix</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>() <span class="ot">-&gt;</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  pielou_niches.matrix</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the column names</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(pielou_niches.matrix) <span class="ot">&lt;-</span> pielou_habitats</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>pielou_niches.matrix <span class="sc">%&gt;%</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create an abundances object</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_abundances</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Set equal weights</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">weight =</span> <span class="dv">1</span>) <span class="ot">-&gt;</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  pielou_niches</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Display it</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>pielou_niches</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 14
+   site   weight S_canadensis S_nemoralis S_rugosa S_juncea S_gigantea S_hispida
+   &lt;chr&gt;   &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;
+ 1 D_nig…      1           55          11       19       13          5         1
+ 2 D_nig…      1            9          39        4        5          3         3
+ 3 D_cal…      1           24           6       22        1          4         0
+ 4 D_pie…      1            8           1       11        9          8         9
+ 5 D_can…      1            8           5        2        5          0         4
+ 6 D_gra…      1            8           4        2        5          4         0
+ 7 D_lan…      1            3           2        3        1          1         0
+ 8 D_mac…      1            0           1        0        1          0         0
+ 9 D_eri…      1            2           0        0        0          0         0
+10 D_sol…      1            0           0        0        0          0         0
+# ℹ 6 more variables: S_squarosa &lt;dbl&gt;, S_graminifolia &lt;dbl&gt;, S_caesia &lt;dbl&gt;,
+#   S_ulignosa &lt;dbl&gt;, S_flexicaulis &lt;dbl&gt;, S_ohioensis &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p><em>The number of habitats occupied by each aphid species can be counted using the usual diversity calculation functions, applied to this unusual dataset:</em></p>
+<blockquote class="blockquote">
+<p>Which aphid species is the most generalist? What proportion of habitats does it occupy?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Which species is the most specialist?</p>
+</blockquote>
+<p><em>The diversity of occupied habitats can take abundance into account.</em></p>
+<blockquote class="blockquote">
+<p>Plot the aphid diversity profiles and establish the link between the actual number of <em>Soledago</em> plants and niche width.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Pielou focuses solely on Shannon entropy in her article, using an archaic form known as the Brillouin formula, which makes the article very difficult to read. <span class="citation" data-cites="Levins1968">Levins (<a href="#ref-Levins1968" role="doc-biblioref">1968</a>)</span> was the first to propose measuring niche width in this way, suggesting two metrics: <span class="math inline">\(-\sum_i{p_i \log(p_i)}\)</span> and <span class="math inline">\(\sum_i{\frac{1}{p_i^2}}\)</span>, where <span class="math inline">\(p_i\)</span> is the probability that an aphid is found in habitat <span class="math inline">\(i\)</span>. Identify these two metrics.</p>
+</blockquote>
+</section>
+<section id="niche-overlap" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="niche-overlap"><span class="header-section-number">2.4.4</span> Niche overlap</h3>
+<p><em>Pielou wants to assess niche overlap in addition to niche width. The reasoning is clearer using Hill’s numbers. If the niches do not overlap at all, there is only one species per habitat, provided, of course, that there are fewer species than habitats. Conversely, if all species are completely generalist, the number of species per habitat equals the total number of species.</em></p>
+<blockquote class="blockquote">
+<p>What measure reflects niche overlap? Give its value for <span class="math inline">\(q = 1\)</span>.</p>
+</blockquote>
+</section>
+</section>
+</section>
+<section id="français-1" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Français</h1>
+<section id="estimation-du-nombre-despèces" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="estimation-du-nombre-despèces"><span class="header-section-number">3.1</span> Estimation du nombre d’espèces</h2>
+<p><em>Vous disposez de trois inventaires de 10 hectares de forêt (environ 5000 arbres) :</em></p>
+<ul>
+<li><em>A : 100 espèces dont 20 singletons (</em><span class="math inline">\(S_1\)</span>), 10 doubletons (<span class="math inline">\(S_2\)</span>) et 3 tripletons (<span class="math inline">\(S_3\)</span>),</li>
+<li><em>B : 80 espèces dont 30 singletons, 20 doubletons et 5 tripletons,</em></li>
+<li><em>C : 150 espèces dont 110 singletons, 30 doubletons et 10 tripletons.</em></li>
+</ul>
+<p><em>Rappel des formules des estimateurs, avec les notations du cours :</em></p>
+<ul>
+<li><span class="math inline">\(S_{J1} = S_{&gt;0} + S_1\)</span></li>
+<li><span class="math inline">\(S_{J2} = S_{&gt;0} + 2 S_1 - S_2\)</span></li>
+<li><span class="math inline">\(S_{J3} = S_{&gt;0} + 3 S_1 - 3 S_2 + S_3\)</span></li>
+</ul>
+<blockquote class="blockquote">
+<p>Estimez rapidement la richesse asymptotique de la forêt en utilisant les estimateurs jackknife et les règles de <span class="citation" data-cites="Brose2003">Brose et al. (<a href="#ref-Brose2003" role="doc-biblioref">2003</a>)</span>.</p>
+</blockquote>
+</section>
+<section id="diversité-phylogénétique" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="diversité-phylogénétique"><span class="header-section-number">3.2</span> Diversité phylogénétique</h2>
+<p><em>La fonction suivante permet de créer un arbre phylogénétique avec 3 espèces. Le paramètre <code>h</code> fixe la hauteur à laquelle les espèces A et B se séparent.</em></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>tree_3sp <span class="ot">&lt;-</span> <span class="cf">function</span>(h) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  NewickABC <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"(C:1,(A:"</span>, <span class="dv">1</span> <span class="sc">-</span> h, <span class="st">",B:"</span>, <span class="dv">1</span> <span class="sc">-</span> h, <span class="st">"):"</span>, h, <span class="st">");"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  phyloABC <span class="ot">&lt;-</span> ape<span class="sc">::</span><span class="fu">read.tree</span>(<span class="at">text =</span> NewickABC)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(phyloABC, <span class="at">direction =</span> <span class="st">"downwards"</span>, <span class="at">srt =</span> <span class="dv">90</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">axis</span>(<span class="dv">2</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a tree</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tree_3sp</span>(<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Quelle est la diversité phylogénétique d’ordre 0 (PD de Faith) d’une communauté contenant les trois espèces, dont l’arbre phylogénétique est celui de la figure ?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Quelle est l’étendue possible des valeurs de <code>h</code> ?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Quel est l’effet de <code>h</code> sur la valeur de PD ?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Ecrivez la valeur de PD en fonction de `h`.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Quel est la richesse (taxonomique, pas phylogénétique) de la communauté ? Expliquez comment <span class="math inline">\(h\)</span> permet de prendre en compte la proximité entre les espèces B et A.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Si les botanistes sont en désaccord sur la synonymie ou non des espèces B et A et qu’une phylogénie montre que leur distance <span class="math inline">\(h\)</span> est faible, proposez une méthode pour les mettre d’accord.</p>
+</blockquote>
+</section>
+<section id="distribution-lognormale" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="distribution-lognormale"><span class="header-section-number">3.3</span> Distribution lognormale</h2>
+<p><em>On tire deux distributions aléatoires dans une loi lognormale. Leur taille et leur richesse sont identiques, seul l’écart-type de la distribution varie.</em></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"divent"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the random seed for reproducibility</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">973</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Size and richness</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>the_size <span class="ot">&lt;-</span> <span class="fl">1E6</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>the_richness <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw the first community</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">rcommunity</span>(</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span>, </span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> the_size, </span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">species_number =</span> the_richness, </span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">distribution =</span> <span class="st">"lnorm"</span>, </span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">sd_lnorm =</span> <span class="dv">1</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Give it a name</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">site =</span> <span class="st">"sigma = 1"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Bind the second community data in the same tibble</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Draw the second community</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rcommunity</span>(</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>      <span class="dv">1</span>, </span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> the_size, </span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">species_number =</span> the_richness, </span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">distribution =</span> <span class="st">"lnorm"</span>, </span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">sd_lnorm =</span> <span class="dv">2</span></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Give it a name</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">site =</span> <span class="st">"sigma = 2"</span>)</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="ot">-&gt;</span> </span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Store the result</span></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>  comm_lnorm</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Whittaker plot</span></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(comm_lnorm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Quelle est la richesse des communautés observées ? Quel est l’abondance de l’espèce la plus rare (approximativement, lue sur le graphique) comparativement au nombre d’arbres total ?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Qu’observe-t-on pour un échantillon de taille raisonnable, disons 6,25ha avec 600 arbres / ha ? Faites la figure. Attention à ne pas détruire la variable <code>comm_lnorm</code> en réutilisant le code.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Tracez le profil de diversité des deux communautés</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Quelle est la communauté la plus diverse ? Faites le lien avec la valeur de <span class="math inline">\(\sigma\)</span>.</p>
+</blockquote>
+</section>
+<section id="pielou-1972-1" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="pielou-1972-1"><span class="header-section-number">3.4</span> Pielou (1972)</h2>
+<p><em>L’objectif de cette dernière partie est de redécouvrir et de moderniser les résultats de <span class="citation" data-cites="pielou1972">Pielou (<a href="#ref-pielou1972" role="doc-biblioref">1972</a>)</span>. Les données sont des relevés d’abondances de pucerons du genre</em> Dactynotus <em>sur des plantes du genre</em> Solidago <em>(Asteraceae), considérées comme leurs habitats possibles. La diversité de chacun des</em> Solidago <em>est celle des espèces de pucerons qu’il abrite.</em></p>
+<table class="caption-top table">
+<caption><em>Dactynotus pieloui</em> et <em>Solidago nemoralis</em></caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/Dactynotus_pieloui.jpg" class="img-fluid"></td>
+<td><img src="images/Solidago_nemoralis.jpg" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+<section id="données" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="données"><span class="header-section-number">3.4.1</span> Données</h3>
+<p><em>Nous allons d’abord évaluer la diversité des pucerons dans leurs différents habitats.</em></p>
+<p><em>Les données sont dans le fichier <code>Pielou1972.csv</code>.</em></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the file</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"data/Pielou1972.csv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replace missing values by zeros</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">replace_na</span>(.x, <span class="dv">0</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Make an abundances object</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_abundances</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Set equal weights</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">weight =</span> <span class="dv">1</span>) <span class="ot">-&gt;</span> </span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  pielou_1972</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 12 Columns: 11
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (1): site
+dbl (10): D_nigrotuberculatus, D_nigrotibius, D_caligatus, D_pieloui, D_cana...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show it</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>pielou_1972</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 12
+   site           weight D_nigrotuberculatus D_nigrotibius D_caligatus D_pieloui
+   &lt;chr&gt;           &lt;dbl&gt;               &lt;dbl&gt;         &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt;
+ 1 S_canadensis        1                  55             9          24         8
+ 2 S_nemoralis         1                  11            39           6         1
+ 3 S_rugosa            1                  19             4          22        11
+ 4 S_juncea            1                  13             5           1         9
+ 5 S_gigantea          1                   5             3           4         8
+ 6 S_hispida           1                   1             3           0         9
+ 7 S_squarosa          1                   2             0           0         4
+ 8 S_graminifolia      1                   1             0           1         4
+ 9 S_caesia            1                   1             2           0         1
+10 S_ulignosa          1                   0             4           0         1
+11 S_flexicaulis       1                   0             1           0         0
+12 S_ohioensis         1                   0             0           0         0
+# ℹ 6 more variables: D_canadensis &lt;dbl&gt;, D_gravicornis &lt;dbl&gt;,
+#   D_lanceolatus &lt;dbl&gt;, D_macgillivrayae &lt;dbl&gt;, D_erigeronensis &lt;dbl&gt;,
+#   D_solirostratus &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Combien y a–t-il d’espèces de pucerons ?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Combien y a–t-il de plantes différentes ?</p>
+</blockquote>
+<p><em>Etant donné le protocole expérimental (toutes les espèces étudiées sont dans les données, il n’y a pas d’espèce non observée), la diversité sera toujours calculée au niveau de l’échantillon: l’argument</em> <code>estimator = "naive"</code> <em>sera utilisé systématiquement.</em></p>
+</section>
+<section id="diversité-des-pucerons" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="diversité-des-pucerons"><span class="header-section-number">3.4.2</span> Diversité des pucerons</h3>
+<blockquote class="blockquote">
+<p>Compter le nombre d’espèces de pucerons sur chaque plante.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Quelle est la richesse maximale ?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Calculer la diversité (pas l’entropie) de Simpson.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Quelle est la plante la plus diverse au sens de Simpson ?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Tracer les profils de diversité de tous les <em>Solidago</em>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Quelle est la plante apparemment la plus diverse, quel que soit l’ordre de diversité ?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Vérifiez si les courbes se croisent pour <span class="math inline">\(q&gt;2\)</span>.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Deux profils sont plats. Expliquez pourquoi.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Décomposez la diversité. Résumez cette décomposition en une ou quelques phrases. Attention : en raison d’un bug dans la version publiée du package divent, vous ne pouvez pas utiliser l’argument <code>estimator = "naive"</code> dans la fonction <code>div_part()</code>. Faites la décomposition de la diversité asymptotique avec l’estimateur par défaut.</p>
+</blockquote>
+</section>
+<section id="largeur-de-niches" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="largeur-de-niches"><span class="header-section-number">3.4.3</span> Largeur de niches</h3>
+<p><em>Pour la suite, nous allons suivre Pielou en étudiant la diversité des habitats occupés par chaque espèce de puceron. A partir d’ici, vous ne pouvez plus appliquer simplement le contenu du cours, mais vous devez étendre les notions que vous connaissez à une approche nouvelle.</em></p>
+<p><em>En considérant que chaque</em> Solidago <em>constitue un habitat distinct pour une espèce de puceron, le nombre d’habitat occupés est un proxy de la taille de sa niche. Un puceron généraliste occupera plus d’habitats (autrement dit, une niche plus large) qu’un puceron spécialiste. La largeur de niche de chaque espèce de puceron est donc définie dans un premier temps par le nombre d’habitats différents qu’il occupe.</em></p>
+<p><em>Les données doivent être organisées différemment avec les espèces de pucerons en ligne et les habitats en colonnes, ce qui nécessite de passer par une matrice de données et de la transposer. Comme le code est un peu laborieux, il est donné ci-dessous.</em></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the file</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">"data/Pielou1972.csv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Replace missing values by zeros</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">replace_na</span>(.x, <span class="dv">0</span>))) <span class="ot">-&gt;</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  pielou_raw</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 12 Columns: 11
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (1): site
+dbl (10): D_nigrotuberculatus, D_nigrotibius, D_caligatus, D_pieloui, D_cana...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the names of the Soledagos</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>pielou_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(site) <span class="ot">-&gt;</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  pielou_habitats</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a matrix</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>pielou_raw <span class="sc">%&gt;%</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove the site</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>site) <span class="sc">%&gt;%</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Make it a matrix</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.matrix</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Transpose the matrix</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>() <span class="ot">-&gt;</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  pielou_niches.matrix</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the column names</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(pielou_niches.matrix) <span class="ot">&lt;-</span> pielou_habitats</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>pielou_niches.matrix <span class="sc">%&gt;%</span> </span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Make an abundances object</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_abundances</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Set equal weights</span></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">weight =</span> <span class="dv">1</span>) <span class="ot">-&gt;</span></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>  pielou_niches</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Display it</span></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>pielou_niches</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 14
+   site   weight S_canadensis S_nemoralis S_rugosa S_juncea S_gigantea S_hispida
+   &lt;chr&gt;   &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;
+ 1 D_nig…      1           55          11       19       13          5         1
+ 2 D_nig…      1            9          39        4        5          3         3
+ 3 D_cal…      1           24           6       22        1          4         0
+ 4 D_pie…      1            8           1       11        9          8         9
+ 5 D_can…      1            8           5        2        5          0         4
+ 6 D_gra…      1            8           4        2        5          4         0
+ 7 D_lan…      1            3           2        3        1          1         0
+ 8 D_mac…      1            0           1        0        1          0         0
+ 9 D_eri…      1            2           0        0        0          0         0
+10 D_sol…      1            0           0        0        0          0         0
+# ℹ 6 more variables: S_squarosa &lt;dbl&gt;, S_graminifolia &lt;dbl&gt;, S_caesia &lt;dbl&gt;,
+#   S_ulignosa &lt;dbl&gt;, S_flexicaulis &lt;dbl&gt;, S_ohioensis &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p><em>Le nombre d’habitats occupés par chaque espèce de puceron peut être compté avec les fonctions de calcul de la diversité habituelles, appliquées à ce jeu de données inhabituel :</em></p>
+<blockquote class="blockquote">
+<p>Quelle est l’espèce de pucerons la plus généraliste ? Quelle proportion des habitats occupe-t-elle ?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Quelle est l’espèce la plus spécialiste ?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Tracez les profils de diversité des pucerons et faites le lien entre le nombre effectif de <em>Soledago</em> et la largeur de niche.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Pielou s’intéresse seulement à l’entropie de Shannon dans son article, sous une forme archaïque appelée formule de Brillouin, ce qui rend l’article très difficile à lire. <span class="citation" data-cites="Levins1968">Levins (<a href="#ref-Levins1968" role="doc-biblioref">1968</a>)</span> avait le premier proposé de mesurer la largeur de niche de cette façon, en proposant deux métriques : <span class="math inline">\(-\sum_i{p_i \log(p_i)}\)</span> et <span class="math inline">\(\sum_i{\frac{1}{p_i^2}}\)</span> où <span class="math inline">\(p_i\)</span> est la probabilité qu’un puceron se trouve dans l’habitat <span class="math inline">\(i\)</span>. Identifiez ces deux métriques.</p>
+</blockquote>
+</section>
+<section id="chevauchement-des-niches" class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="chevauchement-des-niches"><span class="header-section-number">3.4.4</span> Chevauchement des niches</h3>
+<p><em>Pielou veut évaluer le chevauchement des niches en plus de leur largeur. Le raisonnement est plus clair avec les nombres de Hill. Si les niches ne se chevauchent pas du tout, on trouve une seule espèce par habitat à condition bien sûr qu’il y ait moins d’espèces que d’habitats. A l’inverse, si toutes les espèces sont totalement généralistes, le nombre d’espèces par habitat est celui des espèces.</em></p>
+<blockquote class="blockquote">
+<p>Quelle est la mesure qui rend compte du chevauchement des niches ? Donnez sa valeur pour q = 1.</p>
+</blockquote>
+
+</section>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Brose2003" class="csl-entry" role="listitem">
+Brose, Ulrich, Neo D. Martinez, and Richard J. Williams. 2003. <span>“Estimating Species Richness: Sensitivity to Sample Coverage and Insensitivity to Spatial Patterns.”</span> <em>Ecology</em> 84 (9): 2364–77. <a href="https://doi.org/10.1890/02-0558">https://doi.org/10.1890/02-0558</a>.
+</div>
+<div id="ref-Levins1968" class="csl-entry" role="listitem">
+Levins, Richard. 1968. <em>Evolution in Changing Environments: Some Theoretical Explorations</em>. Princeton University Press.
+</div>
+<div id="ref-pielou1972" class="csl-entry" role="listitem">
+Pielou, Evelyn C. 1972. <span>“Niche Width and Niche Overlap: A Method for Measuring Them.”</span> <em>Ecology</em> 53 (4): 687–92. <a href="https://doi.org/10.2307/1934784">https://doi.org/10.2307/1934784</a>.
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
