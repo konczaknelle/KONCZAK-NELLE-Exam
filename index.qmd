@@ -53,6 +53,14 @@ Ne modifiez pas le projet après la fin de l'examen.
 - *B : 80 espèces dont 30 singletons, 20 doubletons et 5 tripletons,*
 - *C : 150 espèces dont 110 singletons, 30 doubletons et 10 tripletons.*
 
+Richesse asymptotique de la foret
+
+- Richesse asymptotique Foret A = 120 espèces (La proportion de singleton est de 20% (20/100), on utilise jackknife 1)
+
+- Richesse asymptotique Foret B = 120 espèces (La couverture est de 72,7% (80/110) calculée avec l'estimateur Jackknife 1, on utilise donc Jackknife 2)
+
+- Richesse asymptotique Foret C = 400 espèces (La couverture est de 44,1% en estimant la richesse avce Jakknife 2 (150/340))
+
 *Rappel des formules des estimateurs, avec les notations du cours :*
 
 - $S_{J1} = S_{>0} + S_1$
@@ -77,17 +85,31 @@ tree_3sp(0.5)
 ```
 
 > Quelle est la diversité phylogénétique d'ordre 0 (PD de Faith) d'une communauté contenant les trois espèces, dont l'arbre phylogénétique est celui de la figure ?
+> 2,5
 
 > Quelle est l'étendue possible des valeurs de `h` ?
+> 0 et 1
 
 > Quel est l'effet de `h` sur la valeur de PD ?
+> PD décroit de façon linéaire quand h augmente
 
 > Ecrivez la valeur de PD en fonction de \`h\`.
+> PD = 3 - h
 
 > Quel est la richesse (taxonomique, pas phylogénétique) de la communauté ?
 > Expliquez comment $h$ permet de prendre en compte la proximité entre les espèces B et A.
+> S = 3; la parametre h définit la longueur de la
+>
+> ```{r}
+> S = 3 
+> #le parametre h  définit la longueur de la branche partagée entre l'espèce A et B. Plus h est grand, plus l'histoire évolutive commune à A et B est longue et plus leurs branches terminales spécifiques sont courtes. Cela permet d'accorder moins de poids à la présence de deux espèces phylogénétiquement très proches qu'à celle de deux espèces ayant divergé tôt pour lesquelles h tandrait verrs 0 et la somme des branches propres vers 2
+> ```
 
 > Si les botanistes sont en désaccord sur la synonymie ou non des espèces B et A et qu'une phylogénie montre que leur distance $h$ est faible, proposez une méthode pour les mettre d'accord.
+>
+> ```{r}
+> # fixer un seuil de distance h en se basant sur la distance observée des espèces  bien établies d'un meme genre. Si h est plus grand que le seuil alors les espèces sont synonymes, sinon elles sont distinctes. 
+> ```
 
 ## Distribution lognormale
 
@@ -132,15 +154,38 @@ autoplot(comm_lnorm)
 
 > Quelle est la richesse des communautés observées ?
 > Quel est l'abondance de l'espèce la plus rare (approximativement, lue sur le graphique) comparativement au nombre d'arbres total ?
+>
+> ```{r}
+> # S = 100 espèces pour chaque communauté
+> # Abondance de l'espèce la plus rare, en proportion du total :
+> ## sigma = 1 : ~0,06 % (≈ 600 / 1 000 000)
+> ## sigma = 2 : ~0,0005 % (≈ 5 / 1 000 000)
+> ```
 
 > Qu'observe-t-on pour un échantillon de taille raisonnable, disons 6,25ha avec 600 arbres / ha ?
 > Faites la figure.
 > Attention à ne pas détruire la variable `comm_lnorm` en réutilisant le code.
+>
+> \`\`\`{# Taille de l'échantillon : 6.25 ha \* 600 arbres/ha} sample_size \<- 6.25 \* 600
+>
+> # Abondances de chaque communauté (comm_lnorm n'est pas modifié)
+>
+> abd_1 \<- comm_lnorm %\>% filter(site == "sigma = 1") %\>% select(starts_with("sp")) %\>% as.numeric() abd_2 \<- comm_lnorm %\>% filter(site == "sigma = 2") %\>% select(starts_with("sp")) %\>% as.numeric()
+>
+> # Échantillonnage des deux communautés
+>
+> rcommunity(1, size = sample_size, abd = abd_1) %\>% mutate(site = "sigma = 1") %\>% bind_rows( rcommunity(1, size = sample_size, abd = abd_2) %\>% mutate(site = "sigma = 2") ) -\> comm_sample
+>
+> autoplot(comm_sample) div_richness(comm_sample, estimator = "naive") \`\`\`
 
 > Tracez le profil de diversité des deux communautés
 
 > Quelle est la communauté la plus diverse ?
 > Faites le lien avec la valeur de $\sigma$.
+>
+> ```{r}
+> #La communauté la plus diverse : À l'ordre q = 0, les deux communautés ont la même richesse. Cependant, pour tout ordre q > 0, la communauté sigma = 1 est nettement plus diverse que la communauté sigma = 2. Sigma mesure l'écart-type de la loi log-normale, soit la dispersion de la log-abondance relative des espèces.Un sigma élevé (sigma = 2) implique une forte hétérogénéité d'abondance : quelques espèces très abondantes capturent la majorité des arbres tandis que beaucoup d'espèces sont très rares. Cela correspond à une faible équitabilité (evenness).Un sigma faible (sigma = 1) produit une répartition plus homogène des individus entre les espèces, soit une meilleure équitabilité.Comme les nombres de Hill ^qD (pour q > 0) prennent en compte à la fois la richesse et l'équitabilité (en accordant un poids plus fort aux espèces abondantes à mesure que $q$ augmente), la communauté avec le plus petit sigma$ (sigma = 1) présente la meilleure équitabilité et est donc la plus diverse pour tout q > 0
+> ```
 
 ## Pielou (1972)
 
@@ -159,7 +204,7 @@ autoplot(comm_lnorm)
 *Les données sont dans le fichier `Pielou1972.csv`.*
 
 ```{r}
-# Read the file
+
 read_csv("data/Pielou1972.csv") %>% 
   # Replace missing values by zeros
   mutate(across(everything(), ~ replace_na(.x, 0))) %>% 
@@ -170,11 +215,31 @@ read_csv("data/Pielou1972.csv") %>%
   pielou_1972
 # Show it
 pielou_1972
+
+library(tidyverse)
+library(divent)
+
+
+div_richness(pielou_1972)
+
+
+div_simpson <- div_hill(pielou_1972, q = 2)
+div_simpson
+
+profils <- profile_hill(pielou_1972)
+autoplot(profils) 
+
+partition <- div_part(pielou_1972, q = 1)
+summary(partition)
+
+
+
 ```
 
 > Combien y a–t-il d'espèces de pucerons ?
-
-> Combien y a–t-il de plantes différentes ?
+> 12
+>  Combien y a–t-il de plantes différentes ?
+> 12
 
 *Etant donné le protocole expérimental (toutes les espèces étudiées sont dans les données, il n'y a pas d'espèce non observée), la diversité sera toujours calculée au niveau de l'échantillon: l'argument* `estimator = "naive"` *sera utilisé systématiquement.*
 
@@ -184,9 +249,13 @@ pielou_1972
 
 > Quelle est la richesse maximale ?
 
+> 17 espèce pour S_juncacea
+
 > Calculer la diversité (pas l'entropie) de Simpson.
 
+
 > Quelle est la plante la plus diverse au sens de Simpson ?
+>S_caesia
 
 > Tracer les profils de diversité de tous les *Solidago*.
 
